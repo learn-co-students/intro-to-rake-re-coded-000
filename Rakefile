@@ -10,10 +10,10 @@ namespace :greeting do
   end
 end
   desc 'migrate changes to database'
+  namespace :db do
   task :environment do
     require_relative './config/environment.rb'
   end
-  namespace :db do
     desc 'create a table'
     task :migrate => :environment do
       Student.create_table
